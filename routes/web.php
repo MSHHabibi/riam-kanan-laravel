@@ -47,13 +47,12 @@ Route::post('/login', [AuthController::class, 'login']);
 |--------------------------------------------------------------------------
 | Logout Route
 |--------------------------------------------------------------------------
-| Dibuat GET dan POST agar tidak error:
-| - 419 Page Expired
-| - 405 Method Not Allowed
+| Route::any digunakan agar /logout bisa diakses lewat GET maupun POST.
+| Ini memperbaiki error 405 Method Not Allowed di Railway.
 |--------------------------------------------------------------------------
 */
 
-Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])
+Route::any('/logout', [AuthController::class, 'logout'])
     ->name('logout');
 
 /*
