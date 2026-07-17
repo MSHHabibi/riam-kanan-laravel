@@ -17,7 +17,8 @@ use App\Http\Controllers\Admin\ReviewController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
 Route::get('/destinasi', [HomeController::class, 'destinations'])
     ->name('front.destinations');
@@ -41,6 +42,15 @@ Route::get('/login', [AuthController::class, 'showLogin'])
     ->name('login');
 
 Route::post('/login', [AuthController::class, 'login']);
+
+/*
+|--------------------------------------------------------------------------
+| Logout Route
+|--------------------------------------------------------------------------
+| Dibuat GET agar tidak terkena error 419 Page Expired / 405 Method Not Allowed
+| saat logout di Railway.
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/logout', [AuthController::class, 'logout'])
     ->name('logout');

@@ -22,11 +22,11 @@ class AuthController extends Controller
         if (Auth::attempt($data)) {
             $r->session()->regenerate();
 
-            return redirect()->intended(
-                auth()->user()->role === 'admin'
-                    ? '/admin/dashboard'
-                    : '/'
-            );
+            if (auth()->user()->role === 'admin') {
+                return redirect('/admin/dashboard');
+            }
+
+            return redirect('/');
         }
 
         return back()
@@ -39,9 +39,6 @@ class AuthController extends Controller
     public function logout(Request $r)
     {
         Auth::logout();
-
-        $r->session()->invalidate();
-        $r->session()->regenerateToken();
 
         return redirect('/');
     }
