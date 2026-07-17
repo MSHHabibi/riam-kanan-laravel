@@ -11,11 +11,6 @@ use App\Http\Controllers\Admin\IslandController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ReviewController;
 
-/*
-|--------------------------------------------------------------------------
-| Frontend Routes
-|--------------------------------------------------------------------------
-*/
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
@@ -32,34 +27,19 @@ Route::get('/kelotok', [HomeController::class, 'boats'])
 Route::get('/peta', [HomeController::class, 'map'])
     ->name('front.map');
 
-/*
-|--------------------------------------------------------------------------
-| Authentication Routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::get('/login', [AuthController::class, 'showLogin'])
     ->name('login');
 
 Route::post('/login', [AuthController::class, 'login']);
 
-/*
-|--------------------------------------------------------------------------
-| Logout Route
-|--------------------------------------------------------------------------
-| Route::any digunakan agar /logout bisa diakses lewat GET maupun POST.
-| Ini memperbaiki error 405 Method Not Allowed di Railway.
-|--------------------------------------------------------------------------
-*/
+
 
 Route::any('/logout', [AuthController::class, 'logout'])
     ->name('logout');
 
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::middleware(['auth', 'admin'])
     ->prefix('admin')
