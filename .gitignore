@@ -8,6 +8,8 @@
 /storage/framework/views/*
 /storage/logs/*
 /.env
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitkeep
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
