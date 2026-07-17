@@ -7,9 +7,15 @@
 /storage/framework/sessions/*
 /storage/framework/views/*
 /storage/logs/*
+!/storage/framework/cache/.gitkeep
+!/storage/framework/sessions/.gitkeep
+!/storage/framework/views/.gitkeep
+!/storage/logs/.gitkeep
 /.env
+
 /bootstrap/cache/*.php
 !/bootstrap/cache/.gitkeep
+
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
