@@ -40,6 +40,10 @@ class AuthController extends Controller
     {
         Auth::logout();
 
+        /*
+         * Dibuat sederhana agar tidak error 419 / 405 di Railway.
+         * Untuk demo UAS, ini aman dan cukup.
+         */
         return redirect('/');
     }
 }
