@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@section('head')
-    <link rel="stylesheet" href="/css/style.css?v=999">
-@endsection
 
 @section('content')
 <section class="hero">

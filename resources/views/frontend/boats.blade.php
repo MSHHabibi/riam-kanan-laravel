@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="/css/style.css?v=999">
 <div class="front-page">
 
     <nav class="front-navbar">
