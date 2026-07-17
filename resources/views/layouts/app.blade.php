@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    {{-- Leaflet CSS untuk peta asli --}}
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,7 +15,6 @@
 <body>
     @yield('content')
 
-    {{-- Leaflet JS untuk peta asli --}}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     @stack('scripts')
